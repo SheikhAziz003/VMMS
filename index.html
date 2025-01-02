@@ -369,7 +369,7 @@
   padding: 20px;
 }
 
-/* Blurred Text Section */
+
 .blurred-text-container {
   position: relative;
   text-align: left;
@@ -393,7 +393,7 @@
   text-align: right;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 1200px) {
   .blurred-text {
     font-size: 5rem;
@@ -444,7 +444,7 @@
           }
     }
 
-        /* Additional Styling */
+       
        .p{
             margin: 10px 0;
             font-size: 1.2rem;
@@ -471,7 +471,7 @@
 
 <body>
 
-    <!-- Navigation Bar -->
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#"><strong>VMMS</strong> </a>
@@ -481,7 +481,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hero-section">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#news-item">Latest Offers </a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#appointment">Appointments</a></li>
@@ -495,7 +495,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+  
   
     <div class="hero-section">
         <div class="blurred-text-container">
@@ -521,7 +521,7 @@
        </div>
     
 
-    <!-- Services Section -->
+   
     <section id="services" class="services">
         <h2 style="text-align: center;"><strong>Services</strong></h2>
         <div class="row">
@@ -636,7 +636,7 @@
         </div>
     </section>
 
-    <!-- Appointments Section -->
+    
     <div id="appointment" class="appointment">
         <p> </p>
         <h2 style="text-align: center;"><strong>Book an Appointment</strong></h2>
@@ -661,7 +661,7 @@
         </form>
     </div>
 
-    <!-- Payment Section -->
+  
     <section id="payment" class="container my-5">
         <h2><strong>Payment Processing</h2>
         <form>
@@ -698,7 +698,7 @@
         </ul>
         
     </section>
-    <!-- Complain Section -->
+    
     <section id="complaint-form">
         <h2 style="color: #ccc;" >Contact Us</h2>
         <p style="color: aliceblue;">Have Any Complain? We are here to help! Fill out the form below or get in touch through the following channel.We respond within 24 hours during buisness hours.
@@ -722,12 +722,12 @@
 
     
 
-    <!-- Footer -->
+    
     <div class="footer">
         <p>© 2024 Vehicle Maintenance Management System | Designed by VMMS Team</p>
     </div>
 
-    <!-- Bootstrap JS -->
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const newsItems = document.getElementById('newsItems');
@@ -740,24 +740,23 @@
             form.addEventListener('submit', function (event) {
                 event.preventDefault(); // Prevent form submission to handle validation
 
-                // Get form field values
+               
                 const name = document.querySelector('input[name="name"]').value;
                 const email = document.querySelector('input[name="email"]').value;
                 const phone = document.querySelector('input[name="phone"]').value;
                 const service = document.querySelector('select[name="service"]').value;
                 const message = document.querySelector('textarea[name="message"]').value;
 
-                // Basic form validation
+                
                 if (name === '' || email === '' || phone === '' || service === '') {
                     alert('Please fill out all required fields.');
                     return;
                 }
 
-                // You can further improve validation like checking valid email, phone number format, etc.
-                // Here we show an alert for now:
+                
                 alert('Your appointment has been successfully booked!');
 
-                // Optional: After successful submission, you could clear the form
+              
                 form.reset();
             });
         });
@@ -768,20 +767,20 @@
       const complaintMessage = document.getElementById('complaintMessage');
       const complaintsContainer = document.getElementById('complaintsContainer');
 
-      // Handle form submission
+      
       complaintSubmitForm.addEventListener('submit', (event) => {
         event.preventDefault(); // Prevent form from reloading the page
 
         const title = complaintTitle.value.trim();
         const message = complaintMessage.value.trim();
 
-        // Validate input fields
+       
         if (title === '' || message === '') {
             alert('Please fill out both the complaint title and description.');
             return;
         }
 
-        // Create a new complaint card
+        
         const complaintCard = document.createElement('div');
         complaintCard.classList.add('complaint-card');
         complaintCard.innerHTML = `
@@ -790,16 +789,16 @@
             <button class="delete-btn">Delete</button>
         `;
 
-        // Add delete functionality
+       
         const deleteBtn = complaintCard.querySelector('.delete-btn');
         deleteBtn.addEventListener('click', () => {
             complaintsContainer.removeChild(complaintCard);
         });
 
-        // Append the complaint card to the container
+       
         complaintsContainer.appendChild(complaintCard);
 
-        // Clear the form fields
+       
         complaintSubmitForm.reset();
       });
       });
@@ -810,7 +809,7 @@
       const paymentMethod = document.getElementById('paymentMethod');
       const cardDetails = document.getElementById('cardDetails');
 
-      // Handle form submission
+     
       paymentForm.addEventListener('submit', (event) => {
         event.preventDefault(); // Prevent form from reloading the page
 
@@ -818,7 +817,7 @@
         const method = paymentMethod.value.trim();
         const card = cardDetails.value.trim();
 
-        // Validate input fields
+       
         if (!amount || isNaN(amount) || amount <= 0) {
             alert('Please enter a valid payment amount.');
             return;
@@ -828,7 +827,7 @@
             return;
         }
 
-        // Show success message
+       
         alert('Your payment has been received successfully!');
 
         // Reset the form fields
